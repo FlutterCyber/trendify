@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:trendify/core/theme/app_text_styles.dart';
+import '../../../core/constants/app_constants.dart';
 import '../../../core/theme/app_colors.dart';
+import '../../../core/theme/app_text_styles.dart';
 import 'welcome_screen.dart';
 
 class WalkthroughScreen extends StatefulWidget {
@@ -15,26 +16,7 @@ class _WalkthroughScreenState extends State<WalkthroughScreen> {
   final PageController _pageController = PageController();
   int _currentPage = 0;
 
-  final List<_PageData> _pages = const [
-    _PageData(
-      image: 'assets/images/walkthrough_1.png',
-      title: 'Explore Fashion Trends\nwith Trendify',
-      description:
-          'Dive into the world of fashion with Trendify, where you can discover the latest and hottest styles curated just for you.',
-    ),
-    _PageData(
-      image: 'assets/images/walkthrough_2.png',
-      title: 'Your Style, Your Trendify\nExperience',
-      description:
-          "Trendify goes beyond fashion – it's a personalized style journey. Start your fashion adventure with Trendify today.",
-    ),
-    _PageData(
-      image: 'assets/images/walkthrough_3.png',
-      title: 'Seamless Fashion,\nSeamless Shopping',
-      description:
-          'Trendify offers an effortless shopping experience, making your style journey smoother than ever.',
-    ),
-  ];
+  final List<WalkthroughItem> _pages = AppConstants.walkthroughItems;
 
   void _goToWelcome() {
     Navigator.pushReplacement(
@@ -73,13 +55,12 @@ class _WalkthroughScreenState extends State<WalkthroughScreen> {
               controller: _pageController,
               onPageChanged: (i) => setState(() => _currentPage = i),
               itemCount: _pages.length,
-              itemBuilder:
-                  (_, index) => Image.asset(
-                    _pages[index].image,
-                    fit: BoxFit.cover,
-                    width: double.infinity,
-                    height: double.infinity,
-                  ),
+              itemBuilder: (_, index) => Image.asset(
+                _pages[index].image,
+                fit: BoxFit.cover,
+                width: double.infinity,
+                height: double.infinity,
+              ),
             ),
           ),
 
@@ -197,16 +178,4 @@ class _WalkthroughScreenState extends State<WalkthroughScreen> {
       ),
     );
   }
-}
-
-class _PageData {
-  final String image;
-  final String title;
-  final String description;
-
-  const _PageData({
-    required this.image,
-    required this.title,
-    required this.description,
-  });
 }

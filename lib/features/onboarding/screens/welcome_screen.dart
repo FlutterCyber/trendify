@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import '../../../core/constants/app_constants.dart';
 import '../../../core/theme/app_colors.dart';
+import '../../auth/screens/sign_in_screen.dart';
+import '../../auth/screens/sign_up_screen.dart';
+import '../../auth/widgets/social_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -16,17 +20,13 @@ class WelcomeScreen extends StatelessWidget {
               const Spacer(flex: 2),
 
               // Logo
-              Image.asset(
-                'assets/images/logo_green.png',
-                width: 80,
-                height: 80,
-              ),
+              Image.asset(AppConstants.logoGreen, width: 80, height: 80),
 
               const SizedBox(height: 32),
 
               // Title
               const Text(
-                "Let's Get Started!",
+                AppConstants.welcomeTitle,
                 style: TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.w800,
@@ -38,37 +38,34 @@ class WelcomeScreen extends StatelessWidget {
 
               // Subtitle
               const Text(
-                "Let's dive in into your account",
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Color(0xFF888888),
-                ),
+                AppConstants.welcomeSubtitle,
+                style: TextStyle(fontSize: 14, color: Color(0xFF888888)),
               ),
 
               const Spacer(),
 
               // Social buttons
-              _SocialButton(
+              SocialButton(
                 icon: 'assets/icons/google.png',
-                label: 'Continue with Google',
+                label: AppConstants.continueWithGoogle,
                 onTap: () {},
               ),
               const SizedBox(height: 12),
-              _SocialButton(
+              SocialButton(
                 icon: 'assets/icons/apple.png',
-                label: 'Continue with Apple',
+                label: AppConstants.continueWithApple,
                 onTap: () {},
               ),
               const SizedBox(height: 12),
-              _SocialButton(
+              SocialButton(
                 icon: 'assets/icons/facebook.png',
-                label: 'Continue with Facebook',
+                label: AppConstants.continueWithFacebook,
                 onTap: () {},
               ),
               const SizedBox(height: 12),
-              _SocialButton(
+              SocialButton(
                 icon: 'assets/icons/twitter.png',
-                label: 'Continue with Twitter',
+                label: AppConstants.continueWithTwitter,
                 onTap: () {},
               ),
 
@@ -78,7 +75,10 @@ class WelcomeScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const SignUpScreen()),
+                  ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.primary,
                     padding: const EdgeInsets.symmetric(vertical: 18),
@@ -88,7 +88,7 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                   ),
                   child: const Text(
-                    'Sign up',
+                    AppConstants.signUp,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,
@@ -104,7 +104,10 @@ class WelcomeScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const SignInScreen()),
+                  ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFFF5F5F5),
                     padding: const EdgeInsets.symmetric(vertical: 18),
@@ -114,7 +117,7 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                   ),
                   child: const Text(
-                    'Sign in',
+                    AppConstants.signIn,
                     style: TextStyle(
                       color: AppColors.primary,
                       fontSize: 16,
@@ -133,7 +136,7 @@ class WelcomeScreen extends StatelessWidget {
                   GestureDetector(
                     onTap: () {},
                     child: const Text(
-                      'Privacy Policy',
+                      AppConstants.privacyPolicy,
                       style: TextStyle(fontSize: 13, color: Color(0xFF888888)),
                     ),
                   ),
@@ -144,7 +147,7 @@ class WelcomeScreen extends StatelessWidget {
                   GestureDetector(
                     onTap: () {},
                     child: const Text(
-                      'Terms of Service',
+                      AppConstants.termsOfService,
                       style: TextStyle(fontSize: 13, color: Color(0xFF888888)),
                     ),
                   ),
@@ -154,51 +157,6 @@ class WelcomeScreen extends StatelessWidget {
               const SizedBox(height: 16),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class _SocialButton extends StatelessWidget {
-  final String icon;
-  final String label;
-  final VoidCallback onTap;
-
-  const _SocialButton({
-    required this.icon,
-    required this.label,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        width: double.infinity,
-        padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 20),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(50),
-          border: Border.all(color: const Color(0xFFE5E5E5)),
-        ),
-        child: Row(
-          children: [
-            Image.asset(icon, width: 24, height: 24),
-            Expanded(
-              child: Text(
-                label,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xFF1A1A1A),
-                ),
-              ),
-            ),
-            const SizedBox(width: 24),
-          ],
         ),
       ),
     );
