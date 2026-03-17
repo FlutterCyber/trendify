@@ -94,6 +94,40 @@ class AppConstants {
   static const String resetSuccessTitle = "You're All Set!";
   static const String resetSuccessSubtitle = 'Your password has been successfully changed.';
   static const String goToHomepage = 'Go to Homepage';
+
+  // Home screen
+  static const List<String> homeCategories = ['Discover', 'Women', 'Men', 'Shoe', 'Bag'];
+
+  static const List<ProductItem> featuredProducts = [
+    ProductItem(image: 'assets/images/image_1.png', name: 'Urban Blend Long Sleeve', price: 185.00, rating: 4.8),
+    ProductItem(image: 'assets/images/image_1.png', name: 'Luxe Blend Formal Shirt', price: 160.00, rating: 4.6),
+    ProductItem(image: 'assets/images/image_1.png', name: 'Urban Flex Casual', price: 175.00, rating: 4.7),
+  ];
+
+  static const List<ProductItem> newArrivalProducts = [
+    ProductItem(image: 'assets/images/image_1.png', name: 'Trend Craft Fleece', price: 210.00, rating: 4.9),
+    ProductItem(image: 'assets/images/image_1.png', name: 'Moda Chic Luxury', price: 200.00, rating: 4.8),
+    ProductItem(image: 'assets/images/image_1.png', name: 'Urban Elegance', price: 215.00, rating: 4.5),
+  ];
+
+  static const List<ProductItem> hotDealsProducts = [
+    ProductItem(image: 'assets/images/image_1.png', name: 'Street Style Cozy Hoodie', price: 155.00, rating: 4.5),
+    ProductItem(image: 'assets/images/image_1.png', name: 'Street Style Comfort', price: 155.00, rating: 4.7),
+    ProductItem(image: 'assets/images/image_1.png', name: 'Vogue Fit Co.', price: 160.00, rating: 4.6),
+  ];
+
+  static const List<CategoryItem> categoryGridItems = [
+    CategoryItem(label: 'Women', image: 'assets/images/image_2.png'),
+    CategoryItem(label: 'Men', image: 'assets/images/image_2.png'),
+    CategoryItem(label: 'Shoe', image: 'assets/images/image_2.png'),
+    CategoryItem(label: 'Bag', image: 'assets/images/image_2.png'),
+    CategoryItem(label: 'Luxury', image: 'assets/images/image_2.png'),
+    CategoryItem(label: 'Kids', image: 'assets/images/image_2.png'),
+    CategoryItem(label: 'Sports', image: 'assets/images/image_2.png'),
+    CategoryItem(label: 'Beauty', image: 'assets/images/image_2.png'),
+    CategoryItem(label: 'Lifestyle', image: 'assets/images/image_2.png'),
+    CategoryItem(label: 'Other', image: 'assets/images/image_2.png'),
+  ];
 }
 
 class WalkthroughItem {
@@ -105,5 +139,29 @@ class WalkthroughItem {
     required this.image,
     required this.title,
     required this.description,
+  });
+}
+
+class ProductItem {
+  final String image;
+  final String name;
+  final double price;
+  final double rating;
+
+  const ProductItem({
+    required this.image,
+    required this.name,
+    required this.price,
+    required this.rating,
+  });
+}
+
+class CategoryItem {
+  final String label;
+  final String image;
+
+  const CategoryItem({
+    required this.label,
+    required this.image,
   });
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/theme/app_colors.dart';
+import '../../bottom_nav_bar.dart';
 
 class ResetPasswordSuccessScreen extends StatelessWidget {
   const ResetPasswordSuccessScreen({super.key});
@@ -68,9 +69,11 @@ class ResetPasswordSuccessScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
-                    // TODO: Navigate to home
-                  },
+                  onPressed: () => Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (_) => const BottomNavBar()),
+                        (route) => false,
+                  ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.primary,
                     padding: const EdgeInsets.symmetric(vertical: 18),

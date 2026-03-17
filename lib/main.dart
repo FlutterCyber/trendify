@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trendify/features/bottom_nav_bar.dart';
 import 'core/theme/app_colors.dart';
 import 'features/onboarding/screens/splash_screen.dart';
 
@@ -18,7 +19,7 @@ class TrendifyApp extends StatelessWidget {
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
       ),
-      home: const SplashScreen(),
+      home: BottomNavBar(),
     );
   }
 }
