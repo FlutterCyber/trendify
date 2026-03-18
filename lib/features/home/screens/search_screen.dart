@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:trendify/features/home/widgets/product_card.dart';
-import 'package:trendify/features/home/widgets/section_header.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/theme/app_colors.dart';
-
+import '../../home/widgets/product_card.dart';
+import '../../home/widgets/section_header.dart';
+import '../widgets/camera_picker.dart';
+import '../widgets/sort_bottom_sheet.dart';
+import '../widgets/sort_filter_bar.dart';
+import '../screens/filter_screen.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -17,6 +20,7 @@ class _SearchScreenState extends State<SearchScreen> {
   final _focusNode = FocusNode();
   String _query = '';
   int _selectedCategoryIndex = 0;
+  String _sortOption = AppConstants.sortOptions.first;
 
   final List<String> _recentSearches = ['Hoodie for Men', 'Nike', 'Polo Shirt'];
 
@@ -39,6 +43,22 @@ class _SearchScreenState extends State<SearchScreen> {
       .toList();
 
   bool get _hasResults => _query.isNotEmpty && _results.isNotEmpty;
+
+  void _openSort() async {
+    final result = await showModalBottomSheet<String>(
+      context: context,
+      backgroundColor: Colors.transparent,
+      builder: (_) => SortBottomSheet(selectedOption: _sortOption),
+    );
+    if (result != null) setState(() => _sortOption = result);
+  }
+
+  void _openFilter() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (_) => const FilterScreen()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -77,12 +97,11 @@ class _SearchScreenState extends State<SearchScreen> {
                     ),
                   ),
                   const SizedBox(width: 12),
-                  const Icon(Icons.camera_alt_outlined, size: 24, color: Color(0xFF555555)),
+                  const CameraPicker(),
                 ],
               ),
             ),
 
-            // Body
             Expanded(
               child: _query.isEmpty
                   ? _buildRecentAndDeals()
@@ -93,6 +112,12 @@ class _SearchScreenState extends State<SearchScreen> {
           ],
         ),
       ),
+
+      // Sort + Filter floating bar — faqat natija bo'lganda ko'rinadi
+      floatingActionButton: (_hasResults)
+          ? SortFilterBar(onSortTap: _openSort, onFilterTap: _openFilter)
+          : null,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 
@@ -193,10 +218,9 @@ class _SearchScreenState extends State<SearchScreen> {
           ),
         ),
         const SizedBox(height: 8),
-        // Results grid
         Expanded(
           child: GridView.builder(
-            padding: const EdgeInsets.fromLTRB(20, 8, 20, 24),
+            padding: const EdgeInsets.fromLTRB(20, 8, 20, 80),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 12,
@@ -224,7 +248,6 @@ class _SearchScreenState extends State<SearchScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Clipboard illustration
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

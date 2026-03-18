@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 class AppConstants {
   AppConstants._();
 
@@ -98,6 +100,17 @@ class AppConstants {
   // Home screen
   static const List<String> homeCategories = ['Discover', 'Women', 'Men', 'Shoe', 'Bag'];
 
+  // Sort options
+  static const List<String> sortOptions = [
+    'Most Suitable',
+    'Popularity',
+    'Top Rated',
+    'Price High to Low',
+    'Price Low to High',
+    'Latest Arrival',
+    'Discount',
+  ];
+
   static const List<ProductItem> featuredProducts = [
     ProductItem(image: 'assets/images/image_1.png', name: 'Urban Blend Long Sleeve', price: 185.00, rating: 4.8),
     ProductItem(image: 'assets/images/image_1.png', name: 'Luxe Blend Formal Shirt', price: 160.00, rating: 4.6),
@@ -114,6 +127,45 @@ class AppConstants {
     ProductItem(image: 'assets/images/image_1.png', name: 'Street Style Cozy Hoodie', price: 155.00, rating: 4.5),
     ProductItem(image: 'assets/images/image_1.png', name: 'Street Style Comfort', price: 155.00, rating: 4.7),
     ProductItem(image: 'assets/images/image_1.png', name: 'Vogue Fit Co.', price: 160.00, rating: 4.6),
+  ];
+
+  // Filter screen
+  static const List<String> filterPriceRanges = [
+    '\$1 - \$50',
+    '\$51 - \$100',
+    '\$101 - \$150',
+    '\$151 - \$200',
+    '\$201 - \$250',
+    '\$251 - \$300',
+    '\$300 & up',
+  ];
+
+  static const List<String> filterRatings = ['3 & up', '4 & up', '5'];
+
+  static const List<String> filterSizes = [
+    'XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL',
+    '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45',
+  ];
+
+  static const List<Map<String, dynamic>> filterColors = [
+    {'label': 'Black', 'color': Color(0xFF1A1A1A)},
+    {'label': 'White', 'color': Color(0xFFFFFFFF)},
+    {'label': 'Red', 'color': Color(0xFFE53935)},
+    {'label': 'Pink', 'color': Color(0xFFE91E8C)},
+    {'label': 'Purple', 'color': Color(0xFF9C27B0)},
+    {'label': 'Deep Pu.', 'color': Color(0xFF6A1B9A)},
+    {'label': 'Indigo', 'color': Color(0xFF3949AB)},
+    {'label': 'Blue', 'color': Color(0xFF1E88E5)},
+    {'label': 'Light Bl.', 'color': Color(0xFF29B6F6)},
+    {'label': 'Teal', 'color': Color(0xFF00897B)},
+    {'label': 'Green', 'color': Color(0xFF43A047)},
+    {'label': 'Lime', 'color': Color(0xFFCDDC39)},
+    {'label': 'Yellow', 'color': Color(0xFFFFEB3B)},
+    {'label': 'Amber', 'color': Color(0xFFFFA000)},
+    {'label': 'Orange', 'color': Color(0xFFFF7043)},
+    {'label': 'Deep O.', 'color': Color(0xFFBF360C)},
+    {'label': 'Brown', 'color': Color(0xFF6D4C41)},
+    {'label': 'Blue Grey', 'color': Color(0xFF607D8B)},
   ];
 
   static const List<CategoryItem> categoryGridItems = [

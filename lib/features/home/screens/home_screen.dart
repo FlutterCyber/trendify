@@ -6,7 +6,7 @@ import 'package:trendify/features/home/widgets/section_header.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/theme/app_colors.dart';
 
-import 'category_grid_item.dart';
+import '../widgets/category_grid_item.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
