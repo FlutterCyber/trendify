@@ -129,6 +129,54 @@ class AppConstants {
     ProductItem(image: 'assets/images/image_1.png', name: 'Vogue Fit Co.', price: 160.00, rating: 4.6),
   ];
 
+  // Product detail screen
+  static const List<String> productSizes = ['XS', 'S', 'M', 'L', 'XL'];
+
+  static const List<Color> productColors = [
+    Color(0xFF1A1A1A), // Black
+    Color(0xFFFFFFFF), // White
+    Color(0xFF6D4C41), // Brown
+    Color(0xFF607D8B), // Blue Grey
+    Color(0xFF3949AB), // Indigo
+    Color(0xFF6A1B9A), // Deep Purple
+  ];
+
+  static const List<ProductInfoItem> productDetailInfo = [
+    ProductInfoItem(label: 'Material', value: '100% Acrylic'),
+    ProductInfoItem(label: 'Care Label', value: 'Machine Washable'),
+    ProductInfoItem(label: 'SKU', value: 'URL-SS-CS-Cs-245'),
+    ProductInfoItem(label: 'Color', value: 'Vary'),
+    ProductInfoItem(label: 'Neck', value: 'High Neck'),
+    ProductInfoItem(label: 'Pattern', value: 'Solid'),
+  ];
+
+  static const String productDescription =
+      'Elevate your style with the Urban Blend Long Sleeve Shirt, a perfect blend of urban sophistication and contemporary comfort. Crafted with meticulous attention to detail, this shirt is designed to make a statement in any setting.';
+
+  static const List<VoucherItem> productVouchers = [
+    VoucherItem(label: 'Best Deal', discount: '20% OFF', code: 'DDEAL5', minSpend: '\$30', until: '01/01/2026'),
+    VoucherItem(label: 'Best Deal', discount: '10% OFF', code: 'HELLO', minSpend: '\$20', until: '01/01/2026'),
+  ];
+
+  static const List<ReviewItem> productReviews = [
+    ReviewItem(
+      name: 'Amelia Williams',
+      time: '2 weeks ago',
+      rating: 5,
+      variant: 'Variant: L, Black',
+      comment: 'Just arrived! Can\'t wait to try this week. Hope it suits my style 😍',
+      hasImage: true,
+    ),
+    ReviewItem(
+      name: 'Victoria Rodriguez',
+      time: '6 days ago',
+      rating: 4,
+      variant: '',
+      comment: 'Urban Blend shirt is a versatile addition. Slightly snug but stylish and well-made ❤️',
+      hasImage: false,
+    ),
+  ];
+
   // Filter screen
   static const List<String> filterPriceRanges = [
     '\$1 - \$50',
@@ -166,6 +214,15 @@ class AppConstants {
     {'label': 'Deep O.', 'color': Color(0xFFBF360C)},
     {'label': 'Brown', 'color': Color(0xFF6D4C41)},
     {'label': 'Blue Grey', 'color': Color(0xFF607D8B)},
+  ];
+
+  static const List<ProductItem> categoryProducts = [
+    ProductItem(image: 'assets/images/image_1.png', name: 'Urban Blend Long Sleeve', price: 185.00, rating: 4.8),
+    ProductItem(image: 'assets/images/image_1.png', name: 'Elite Style Modal Eleg.', price: 190.00, rating: 4.9),
+    ProductItem(image: 'assets/images/image_1.png', name: 'Urban Flex Comfort', price: 175.00, rating: 4.7),
+    ProductItem(image: 'assets/images/image_1.png', name: 'Svelte Style Premium', price: 165.50, rating: 4.6),
+    ProductItem(image: 'assets/images/image_1.png', name: 'Trend Craft Fleece', price: 210.00, rating: 4.7),
+    ProductItem(image: 'assets/images/image_1.png', name: 'Moda Chic Luxury', price: 200.00, rating: 4.5),
   ];
 
   static const List<CategoryItem> categoryGridItems = [
@@ -215,5 +272,46 @@ class CategoryItem {
   const CategoryItem({
     required this.label,
     required this.image,
+  });
+}
+
+class ProductInfoItem {
+  final String label;
+  final String value;
+
+  const ProductInfoItem({required this.label, required this.value});
+}
+
+class ReviewItem {
+  final String name;
+  final String time;
+  final int rating;
+  final String variant;
+  final String comment;
+  final bool hasImage;
+
+  const ReviewItem({
+    required this.name,
+    required this.time,
+    required this.rating,
+    required this.variant,
+    required this.comment,
+    required this.hasImage,
+  });
+}
+
+class VoucherItem {
+  final String label;
+  final String discount;
+  final String code;
+  final String minSpend;
+  final String until;
+
+  const VoucherItem({
+    required this.label,
+    required this.discount,
+    required this.code,
+    required this.minSpend,
+    required this.until,
   });
 }

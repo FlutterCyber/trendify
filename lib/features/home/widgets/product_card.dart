@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trendify/features/product/screens/product_detail_screen.dart';
 import '../../../core/theme/app_colors.dart';
 
 class ProductCard extends StatefulWidget {
@@ -26,9 +27,14 @@ class _ProductCardState extends State<ProductCard> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: widget.width,
-      child: Column(
+    return GestureDetector(
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => const ProductDetailScreen()),
+      ),
+      child: SizedBox(
+        width: widget.width,
+        child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Stack(
@@ -104,6 +110,7 @@ class _ProductCardState extends State<ProductCard> {
             ),
           ),
         ],
+        ),
       ),
     );
   }

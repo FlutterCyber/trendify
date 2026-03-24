@@ -3,9 +3,9 @@ import 'package:trendify/features/home/widgets/product_card.dart';
 import 'package:trendify/features/home/widgets/promo_banner.dart';
 import 'package:trendify/features/home/screens/search_screen.dart';
 import 'package:trendify/features/home/widgets/section_header.dart';
+import 'package:trendify/features/product/screens/product_list_screen.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/theme/app_colors.dart';
-
 import '../widgets/category_grid_item.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -100,7 +100,20 @@ class _HomeScreenState extends State<HomeScreen> {
               itemBuilder: (_, i) {
                 final selected = i == _selectedCategoryIndex;
                 return GestureDetector(
-                  onTap: () => setState(() => _selectedCategoryIndex = i),
+                  onTap: () {
+                    if (i == 0) {
+                      setState(() => _selectedCategoryIndex = i);
+                    } else {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => ProductListScreen(
+                            category: AppConstants.homeCategories[i],
+                          ),
+                        ),
+                      );
+                    }
+                  },
                   child: Container(
                     margin: const EdgeInsets.only(right: 10),
                     padding: const EdgeInsets.symmetric(
@@ -170,7 +183,16 @@ class _HomeScreenState extends State<HomeScreen> {
               itemCount: AppConstants.categoryGridItems.length,
               itemBuilder: (_, i) {
                 final c = AppConstants.categoryGridItems[i];
-                return CategoryGridItem(label: c.label, image: c.image);
+                return CategoryGridItem(
+                  label: c.label,
+                  image: c.image,
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => ProductListScreen(category: c.label),
+                    ),
+                  ),
+                );
               },
             ),
           ),
