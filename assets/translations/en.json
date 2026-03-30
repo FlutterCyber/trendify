@@ -1,0 +1,158 @@
+{
+  "app_name": "Trendify",
+
+  "walkthrough": {
+    "1": {
+      "title": "Explore Fashion Trends\nwith Trendify",
+      "description": "Dive into the world of fashion with Trendify, where you can discover the latest and hottest styles curated just for you."
+    },
+    "2": {
+      "title": "Your Style, Your Trendify\nExperience",
+      "description": "Trendify goes beyond fashion – it's a personalized style journey. Start your fashion adventure with Trendify today."
+    },
+    "3": {
+      "title": "Seamless Fashion,\nSeamless Shopping",
+      "description": "Trendify offers an effortless shopping experience, making your style journey smoother than ever."
+    }
+  },
+
+  "welcome": {
+    "title": "Let's Get Started!",
+    "subtitle": "Let's dive in into your account",
+    "sign_up": "Sign up",
+    "sign_in": "Sign in",
+    "privacy_policy": "Privacy Policy",
+    "terms_of_service": "Terms of Service",
+    "continue_with_google": "Continue with Google",
+    "continue_with_apple": "Continue with Apple",
+    "continue_with_facebook": "Continue with Facebook",
+    "continue_with_twitter": "Continue with Twitter"
+  },
+
+  "sign_up": {
+    "title": "Join Trendify Today",
+    "subtitle": "Embark on a fashion journey tailored for you.",
+    "email": "Email",
+    "email_hint": "Email",
+    "password": "Password",
+    "password_hint": "Password",
+    "agree_to_terms": "I agree to Trendify ",
+    "terms_and_conditions": "Terms & Conditions.",
+    "already_have_account": "Already have an account? ",
+    "loading": "Sign up..."
+  },
+
+  "sign_in": {
+    "title": "Welcome Back!",
+    "subtitle": "Sign in to access your personalized fashion.",
+    "remember_me": "Remember me",
+    "forgot_password": "Forgot Password?",
+    "dont_have_account": "Don't have an account? ",
+    "loading": "Sign in..."
+  },
+
+  "forgot_password": {
+    "title": "Forgot Your Password?",
+    "subtitle": "We've got you covered. Enter your registered email to reset your password. We will send an OTP code to your email for the next steps.",
+    "registered_email": "Your Registered Email",
+    "send_otp_code": "Send OTP Code"
+  },
+
+  "otp": {
+    "title": "Enter OTP Code",
+    "subtitle": "Please check your email inbox for a message from Trendify. Enter the one-time verification code below.",
+    "resend_code": "Resend code",
+    "resend_code_in": "You can resend the code in",
+    "seconds": "seconds"
+  },
+
+  "create_password": {
+    "title": "Secure Your Account",
+    "subtitle": "Almost there! Create a new password for your Trendify account to keep it secure. Remember to choose a strong and unique password.",
+    "new_password": "New Password",
+    "new_password_hint": "New Password",
+    "confirm_new_password": "Confirm New Password",
+    "confirm_new_password_hint": "Confirm New Password",
+    "save": "Save New Password"
+  },
+
+  "reset_success": {
+    "title": "You're All Set!",
+    "subtitle": "Your password has been successfully changed.",
+    "go_to_homepage": "Go to Homepage"
+  },
+
+  "home": {
+    "categories": {
+      "discover": "Discover",
+      "women": "Women",
+      "men": "Men",
+      "shoe": "Shoe",
+      "bag": "Bag"
+    },
+    "sort": {
+      "most_suitable": "Most Suitable",
+      "popularity": "Popularity",
+      "top_rated": "Top Rated",
+      "price_high_to_low": "Price High to Low",
+      "price_low_to_high": "Price Low to High",
+      "latest_arrival": "Latest Arrival",
+      "discount": "Discount"
+    }
+  },
+
+  "filter": {
+    "ratings": {
+      "3_up": "3 & up",
+      "4_up": "4 & up",
+      "5": "5"
+    },
+    "colors": {
+      "black": "Black",
+      "white": "White",
+      "red": "Red",
+      "pink": "Pink",
+      "purple": "Purple",
+      "deep_purple": "Deep Pu.",
+      "indigo": "Indigo",
+      "blue": "Blue",
+      "light_blue": "Light Bl.",
+      "teal": "Teal",
+      "green": "Green",
+      "lime": "Lime",
+      "yellow": "Yellow",
+      "amber": "Amber",
+      "orange": "Orange",
+      "deep_orange": "Deep O.",
+      "brown": "Brown",
+      "blue_grey": "Blue Grey"
+    }
+  },
+
+  "product": {
+    "info": {
+      "material": "Material",
+      "care_label": "Care Label",
+      "sku": "SKU",
+      "color": "Color",
+      "neck": "Neck",
+      "pattern": "Pattern"
+    },
+    "voucher": {
+      "best_deal": "Best Deal"
+    }
+  },
+
+  "category": {
+    "women": "Women",
+    "men": "Men",
+    "shoe": "Shoe",
+    "bag": "Bag",
+    "luxury": "Luxury",
+    "kids": "Kids",
+    "sports": "Sports",
+    "beauty": "Beauty",
+    "lifestyle": "Lifestyle",
+    "other": "Other"
+  }
+}

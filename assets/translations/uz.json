@@ -1,0 +1,158 @@
+{
+  "app_name": "Trendify",
+
+  "walkthrough": {
+    "1": {
+      "title": "Trendify bilan moda\ntrendlarini kashf eting",
+      "description": "Trendify bilan moda dunyasiga sho'ng'ing — siz uchun maxsus tanlangan eng so'nggi va mashhur uslublarni toping."
+    },
+    "2": {
+      "title": "Sizning uslubingiz, sizning\nTrendify tajribangiz",
+      "description": "Trendify faqat moda emas — bu shaxsiy uslub sayohati. Bugun Trendify bilan moda sarguzashtingizni boshlang."
+    },
+    "3": {
+      "title": "Qulay moda,\nqulay xarid",
+      "description": "Trendify xarid tajribangizni ilgari hech qachon bo'lmagandek qulay qiladi."
+    }
+  },
+
+  "welcome": {
+    "title": "Boshlaylik!",
+    "subtitle": "Hisobingizga kiring",
+    "sign_up": "Ro'yxatdan o'tish",
+    "sign_in": "Kirish",
+    "privacy_policy": "Maxfiylik siyosati",
+    "terms_of_service": "Xizmat shartlari",
+    "continue_with_google": "Google orqali davom etish",
+    "continue_with_apple": "Apple orqali davom etish",
+    "continue_with_facebook": "Facebook orqali davom etish",
+    "continue_with_twitter": "Twitter orqali davom etish"
+  },
+
+  "sign_up": {
+    "title": "Bugun Trendifyga qo'shiling",
+    "subtitle": "Siz uchun moslashtirilgan moda sayohatini boshlang.",
+    "email": "Elektron pochta",
+    "email_hint": "Elektron pochta",
+    "password": "Parol",
+    "password_hint": "Parol",
+    "agree_to_terms": "Men Trendify ",
+    "terms_and_conditions": "Shartlari bilan roziman.",
+    "already_have_account": "Allaqachon hisobingiz bormi? ",
+    "loading": "Ro'yxatdan o'tilmoqda..."
+  },
+
+  "sign_in": {
+    "title": "Xush kelibsiz!",
+    "subtitle": "Shaxsiy modangizga kirish uchun tizimga kiring.",
+    "remember_me": "Meni eslab qol",
+    "forgot_password": "Parolni unutdingizmi?",
+    "dont_have_account": "Hisobingiz yo'qmi? ",
+    "loading": "Kirilmoqda..."
+  },
+
+  "forgot_password": {
+    "title": "Parolni unutdingizmi?",
+    "subtitle": "Tashvishlanmang. Parolni tiklash uchun ro'yxatdan o'tgan elektron pochtangizni kiriting. Keyingi qadamlar uchun elektron pochtangizga OTP kodi yuboramiz.",
+    "registered_email": "Ro'yxatdan o'tgan pochtangiz",
+    "send_otp_code": "OTP kodni yuborish"
+  },
+
+  "otp": {
+    "title": "OTP kodni kiriting",
+    "subtitle": "Iltimos, Trendifydan kelgan xabar uchun elektron pochta qutingizni tekshiring. Bir martalik tasdiqlash kodini quyida kiriting.",
+    "resend_code": "Kodni qayta yuborish",
+    "resend_code_in": "Kodni qayta yuborish mumkin",
+    "seconds": "soniyadan so'ng"
+  },
+
+  "create_password": {
+    "title": "Hisobingizni himoya qiling",
+    "subtitle": "Deyarli tugadi! Trendify hisobingiz uchun yangi parol yarating. Kuchli va noyob parol tanlashni unutmang.",
+    "new_password": "Yangi parol",
+    "new_password_hint": "Yangi parol",
+    "confirm_new_password": "Yangi parolni tasdiqlang",
+    "confirm_new_password_hint": "Yangi parolni tasdiqlang",
+    "save": "Yangi parolni saqlash"
+  },
+
+  "reset_success": {
+    "title": "Hammasi tayyor!",
+    "subtitle": "Parolingiz muvaffaqiyatli o'zgartirildi.",
+    "go_to_homepage": "Bosh sahifaga o'tish"
+  },
+
+  "home": {
+    "categories": {
+      "discover": "Kashfiyot",
+      "women": "Ayollar",
+      "men": "Erkaklar",
+      "shoe": "Poyabzal",
+      "bag": "Sumka"
+    },
+    "sort": {
+      "most_suitable": "Eng mos",
+      "popularity": "Mashhurlik",
+      "top_rated": "Eng yuqori reyting",
+      "price_high_to_low": "Narx: yuqoridan pastga",
+      "price_low_to_high": "Narx: pastdan yuqoriga",
+      "latest_arrival": "Yangi kelganlar",
+      "discount": "Chegirma"
+    }
+  },
+
+  "filter": {
+    "ratings": {
+      "3_up": "3 va undan yuqori",
+      "4_up": "4 va undan yuqori",
+      "5": "5"
+    },
+    "colors": {
+      "black": "Qora",
+      "white": "Oq",
+      "red": "Qizil",
+      "pink": "Pushti",
+      "purple": "Binafsha",
+      "deep_purple": "To'q bin.",
+      "indigo": "Indigo",
+      "blue": "Ko'k",
+      "light_blue": "Och ko'k",
+      "teal": "Zangori",
+      "green": "Yashil",
+      "lime": "Limon",
+      "yellow": "Sariq",
+      "amber": "Ombr",
+      "orange": "To'q sariq",
+      "deep_orange": "To'q sar.",
+      "brown": "Jigarrang",
+      "blue_grey": "Ko'k-kulrang"
+    }
+  },
+
+  "product": {
+    "info": {
+      "material": "Material",
+      "care_label": "Parvarish",
+      "sku": "SKU",
+      "color": "Rang",
+      "neck": "Bo'yin",
+      "pattern": "Naqsh"
+    },
+    "voucher": {
+      "best_deal": "Eng yaxshi taklif"
+    }
+  },
+
+  "category": {
+    "women": "Ayollar",
+    "men": "Erkaklar",
+    "shoe": "Poyabzal",
+    "bag": "Sumka",
+    "luxury": "Lyuks",
+    "kids": "Bolalar",
+    "sports": "Sport",
+    "beauty": "Go'zallik",
+    "lifestyle": "Turmush tarzi",
+    "other": "Boshqa"
+  }
+}
