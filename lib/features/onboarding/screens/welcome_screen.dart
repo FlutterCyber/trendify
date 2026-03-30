@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:trendify/core/constants/app_strings.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../auth/screens/sign_in_screen.dart';
@@ -19,15 +21,13 @@ class WelcomeScreen extends StatelessWidget {
             children: [
               const Spacer(flex: 2),
 
-              // Logo
               Image.asset(AppConstants.logoGreen, width: 80, height: 80),
 
               const SizedBox(height: 32),
 
-              // Title
-              const Text(
-                AppConstants.welcomeTitle,
-                style: TextStyle(
+              Text(
+                AppStrings.welcomeTitle.tr(),
+                style: const TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.w800,
                   color: Color(0xFF1A1A1A),
@@ -36,42 +36,39 @@ class WelcomeScreen extends StatelessWidget {
 
               const SizedBox(height: 10),
 
-              // Subtitle
-              const Text(
-                AppConstants.welcomeSubtitle,
-                style: TextStyle(fontSize: 14, color: Color(0xFF888888)),
+              Text(
+                AppStrings.welcomeSubtitle.tr(),
+                style: const TextStyle(fontSize: 14, color: Color(0xFF888888)),
               ),
 
               const Spacer(),
 
-              // Social buttons
               SocialButton(
                 icon: 'assets/icons/google.png',
-                label: AppConstants.continueWithGoogle,
+                label: AppStrings.welcomeContinueWithGoogle.tr(),
                 onTap: () {},
               ),
               const SizedBox(height: 12),
               SocialButton(
                 icon: 'assets/icons/apple.png',
-                label: AppConstants.continueWithApple,
+                label: AppStrings.welcomeContinueWithApple.tr(),
                 onTap: () {},
               ),
               const SizedBox(height: 12),
               SocialButton(
                 icon: 'assets/icons/facebook.png',
-                label: AppConstants.continueWithFacebook,
+                label: AppStrings.welcomeContinueWithFacebook.tr(),
                 onTap: () {},
               ),
               const SizedBox(height: 12),
               SocialButton(
                 icon: 'assets/icons/twitter.png',
-                label: AppConstants.continueWithTwitter,
+                label: AppStrings.welcomeContinueWithTwitter.tr(),
                 onTap: () {},
               ),
 
               const Spacer(),
 
-              // Sign up button
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -87,9 +84,9 @@ class WelcomeScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(50),
                     ),
                   ),
-                  child: const Text(
-                    AppConstants.signUp,
-                    style: TextStyle(
+                  child: Text(
+                    AppStrings.welcomeSignUp.tr(),
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
@@ -100,7 +97,6 @@ class WelcomeScreen extends StatelessWidget {
 
               const SizedBox(height: 12),
 
-              // Sign in button
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -116,9 +112,9 @@ class WelcomeScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(50),
                     ),
                   ),
-                  child: const Text(
-                    AppConstants.signIn,
-                    style: TextStyle(
+                  child: Text(
+                    AppStrings.welcomeSignIn.tr(),
+                    style: const TextStyle(
                       color: AppColors.primary,
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
@@ -129,26 +125,22 @@ class WelcomeScreen extends StatelessWidget {
 
               const SizedBox(height: 24),
 
-              // Footer
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   GestureDetector(
                     onTap: () {},
-                    child: const Text(
-                      AppConstants.privacyPolicy,
-                      style: TextStyle(fontSize: 13, color: Color(0xFF888888)),
+                    child: Text(
+                      AppStrings.welcomePrivacyPolicy.tr(),
+                      style: const TextStyle(fontSize: 13, color: Color(0xFF888888)),
                     ),
                   ),
-                  const Text(
-                    '  ·  ',
-                    style: TextStyle(fontSize: 13, color: Color(0xFF888888)),
-                  ),
+                  const Text('  ·  ', style: TextStyle(fontSize: 13, color: Color(0xFF888888))),
                   GestureDetector(
                     onTap: () {},
-                    child: const Text(
-                      AppConstants.termsOfService,
-                      style: TextStyle(fontSize: 13, color: Color(0xFF888888)),
+                    child: Text(
+                      AppStrings.welcomeTermsOfService.tr(),
+                      style: const TextStyle(fontSize: 13, color: Color(0xFF888888)),
                     ),
                   ),
                 ],

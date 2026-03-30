@@ -1,5 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import '../../../core/constants/app_constants.dart';
+import 'package:trendify/core/constants/app_strings.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../bottom_nav_bar.dart';
 
@@ -46,9 +47,9 @@ class ResetPasswordSuccessScreen extends StatelessWidget {
 
               const SizedBox(height: 32),
 
-              const Text(
-                AppConstants.resetSuccessTitle,
-                style: TextStyle(
+              Text(
+                AppStrings.resetSuccessTitle.tr(),
+                style: const TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.w800,
                   color: Color(0xFF1A1A1A),
@@ -57,10 +58,10 @@ class ResetPasswordSuccessScreen extends StatelessWidget {
 
               const SizedBox(height: 12),
 
-              const Text(
-                AppConstants.resetSuccessSubtitle,
+              Text(
+                AppStrings.resetSuccessSubtitle.tr(),
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 14, color: Color(0xFF888888)),
+                style: const TextStyle(fontSize: 14, color: Color(0xFF888888)),
               ),
 
               const Spacer(),
@@ -72,7 +73,7 @@ class ResetPasswordSuccessScreen extends StatelessWidget {
                   onPressed: () => Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(builder: (_) => const BottomNavBar()),
-                        (route) => false,
+                    (route) => false,
                   ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.primary,
@@ -82,9 +83,9 @@ class ResetPasswordSuccessScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(50),
                     ),
                   ),
-                  child: const Text(
-                    AppConstants.goToHomepage,
-                    style: TextStyle(
+                  child: Text(
+                    AppStrings.resetSuccessGoToHomepage.tr(),
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.w600,

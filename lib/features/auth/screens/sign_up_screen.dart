@@ -1,5 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import '../../../core/constants/app_constants.dart';
+import 'package:trendify/core/constants/app_strings.dart';
 import '../../../core/theme/app_colors.dart';
 import '../widgets/auth_input_field.dart';
 import '../widgets/loading_overlay.dart';
@@ -28,7 +29,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   void _onSignUp() async {
     setState(() => _isLoading = true);
-    // TODO: sign up logic
     await Future.delayed(const Duration(seconds: 2));
     if (mounted) setState(() => _isLoading = false);
   }
@@ -46,133 +46,92 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 16),
-
-                  // Back button
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
                     child: const Icon(Icons.arrow_back, size: 24),
                   ),
-
                   const SizedBox(height: 24),
-
-                  // Title
                   Row(
                     children: [
-                      const Text(
-                        AppConstants.signUpTitle,
-                        style: TextStyle(
+                      Text(
+                        AppStrings.signUpTitle.tr(),
+                        style: const TextStyle(
                           fontSize: 26,
                           fontWeight: FontWeight.w800,
                           color: Color(0xFF1A1A1A),
                         ),
                       ),
                       const SizedBox(width: 8),
-                      Icon(
-                        Icons.person,
-                        size: 28,
-                        color: Colors.blueGrey.shade300,
-                      ),
+                      Icon(Icons.person, size: 28, color: Colors.blueGrey.shade300),
                     ],
                   ),
-
                   const SizedBox(height: 8),
-
-                  const Text(
-                    AppConstants.signUpSubtitle,
-                    style: TextStyle(fontSize: 14, color: Color(0xFF888888)),
+                  Text(
+                    AppStrings.signUpSubtitle.tr(),
+                    style: const TextStyle(fontSize: 14, color: Color(0xFF888888)),
                   ),
-
                   const SizedBox(height: 32),
-
-                  // Email
-                  const Text(
-                    AppConstants.email,
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                  Text(
+                    AppStrings.signUpEmail.tr(),
+                    style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
                   ),
                   const SizedBox(height: 8),
                   AuthInputField(
                     controller: _emailController,
-                    hint: AppConstants.emailHint,
+                    hint: AppStrings.signUpEmailHint.tr(),
                     prefixIcon: Icons.mail_outline_rounded,
                   ),
-
                   const SizedBox(height: 20),
-
-                  // Password
-                  const Text(
-                    AppConstants.password,
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                  Text(
+                    AppStrings.signUpPassword.tr(),
+                    style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
                   ),
                   const SizedBox(height: 8),
                   AuthInputField(
                     controller: _passwordController,
-                    hint: AppConstants.passwordHint,
+                    hint: AppStrings.signUpPasswordHint.tr(),
                     prefixIcon: Icons.lock_outline_rounded,
                     obscureText: _obscurePassword,
                     suffixIcon: GestureDetector(
-                      onTap:
-                          () => setState(
-                            () => _obscurePassword = !_obscurePassword,
-                          ),
+                      onTap: () => setState(() => _obscurePassword = !_obscurePassword),
                       child: Icon(
-                        _obscurePassword
-                            ? Icons.visibility_off_outlined
-                            : Icons.visibility_outlined,
+                        _obscurePassword ? Icons.visibility_off_outlined : Icons.visibility_outlined,
                         color: Colors.grey,
                         size: 20,
                       ),
                     ),
                   ),
-
                   const SizedBox(height: 20),
-
-                  // Terms checkbox
                   Row(
                     children: [
                       GestureDetector(
-                        onTap:
-                            () =>
-                                setState(() => _agreeToTerms = !_agreeToTerms),
+                        onTap: () => setState(() => _agreeToTerms = !_agreeToTerms),
                         child: Container(
                           width: 22,
                           height: 22,
                           decoration: BoxDecoration(
-                            color:
-                                _agreeToTerms
-                                    ? AppColors.primary
-                                    : Colors.transparent,
+                            color: _agreeToTerms ? AppColors.primary : Colors.transparent,
                             border: Border.all(
-                              color:
-                                  _agreeToTerms
-                                      ? AppColors.primary
-                                      : const Color(0xFFCCCCCC),
+                              color: _agreeToTerms ? AppColors.primary : const Color(0xFFCCCCCC),
                               width: 1.5,
                             ),
                             borderRadius: BorderRadius.circular(4),
                           ),
-                          child:
-                              _agreeToTerms
-                                  ? const Icon(
-                                    Icons.check,
-                                    color: Colors.white,
-                                    size: 14,
-                                  )
-                                  : null,
+                          child: _agreeToTerms
+                              ? const Icon(Icons.check, color: Colors.white, size: 14)
+                              : null,
                         ),
                       ),
                       const SizedBox(width: 10),
-                      const Text(
-                        AppConstants.agreeToTerms,
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Color(0xFF1A1A1A),
-                        ),
+                      Text(
+                        AppStrings.signUpAgreeToTerms.tr(),
+                        style: const TextStyle(fontSize: 14, color: Color(0xFF1A1A1A)),
                       ),
                       GestureDetector(
                         onTap: () {},
-                        child: const Text(
-                          AppConstants.termsAndConditions,
-                          style: TextStyle(
+                        child: Text(
+                          AppStrings.signUpTermsAndConditions.tr(),
+                          style: const TextStyle(
                             fontSize: 14,
                             color: AppColors.primary,
                             fontWeight: FontWeight.w500,
@@ -181,26 +140,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ],
                   ),
-
                   const SizedBox(height: 20),
-
-                  // Already have account
                   Center(
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        const Text(
-                          AppConstants.alreadyHaveAccount,
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Color(0xFF888888),
-                          ),
+                        Text(
+                          AppStrings.signUpAlreadyHaveAccount.tr(),
+                          style: const TextStyle(fontSize: 14, color: Color(0xFF888888)),
                         ),
                         GestureDetector(
                           onTap: () => Navigator.pop(context),
-                          child: const Text(
-                            AppConstants.signIn,
-                            style: TextStyle(
+                          child: Text(
+                            AppStrings.welcomeSignIn.tr(),
+                            style: const TextStyle(
                               fontSize: 14,
                               color: AppColors.primary,
                               fontWeight: FontWeight.w600,
@@ -210,41 +163,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ],
                     ),
                   ),
-
                   const SizedBox(height: 24),
-
-                  // Divider
-                  Row(
-                    children: const [
+                  const Row(
+                    children: [
                       Expanded(child: Divider(color: Color(0xFFEEEEEE))),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 12),
-                        child: Text(
-                          'or',
-                          style: TextStyle(color: Color(0xFF888888)),
-                        ),
+                        child: Text('or', style: TextStyle(color: Color(0xFF888888))),
                       ),
                       Expanded(child: Divider(color: Color(0xFFEEEEEE))),
                     ],
                   ),
-
                   const SizedBox(height: 16),
-
                   SocialButton(
                     icon: 'assets/icons/google.png',
-                    label: AppConstants.continueWithGoogle,
+                    label: AppStrings.welcomeContinueWithGoogle.tr(),
                     onTap: () {},
                   ),
                   const SizedBox(height: 12),
                   SocialButton(
                     icon: 'assets/icons/apple.png',
-                    label: AppConstants.continueWithApple,
+                    label: AppStrings.welcomeContinueWithApple.tr(),
                     onTap: () {},
                   ),
-
                   const SizedBox(height: 24),
-
-                  // Sign up button
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
@@ -257,9 +199,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           borderRadius: BorderRadius.circular(50),
                         ),
                       ),
-                      child: const Text(
-                        AppConstants.signUp,
-                        style: TextStyle(
+                      child: Text(
+                        AppStrings.welcomeSignUp.tr(),
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
@@ -267,18 +209,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                   ),
-
                   const SizedBox(height: 32),
                 ],
               ),
             ),
           ),
-
-          // Loading overlay
-          if (_isLoading) LoadingOverlay(message: AppConstants.signUpLoading),
-          // _isLoading
-          //     ? LoadingOverlay(message: AppConstants.signUpLoading)
-          //     : SizedBox.shrink(),
+          if (_isLoading) LoadingOverlay(message: AppStrings.signUpLoading.tr()),
         ],
       ),
     );

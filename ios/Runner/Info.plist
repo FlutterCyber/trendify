@@ -30,6 +30,12 @@
 	<string>Main</string>
 	<key>NSCameraUsageDescription</key>
     <string>Camera is used for visual search</string>
+    <key>CFBundleLocalizations</key>
+    <array>
+    	<string>en</string>
+    	<string>uz</string>
+    	<string>ru</string>
+    </array>
 
 	<key>UISupportedInterfaceOrientations</key>
 	<array>

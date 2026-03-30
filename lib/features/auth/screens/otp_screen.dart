@@ -1,7 +1,8 @@
 import 'dart:async';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:trendify/core/constants/app_strings.dart';
 import 'package:pinput/pinput.dart';
-import '../../../core/constants/app_constants.dart';
 import '../../../core/theme/app_colors.dart';
 import 'create_new_password_screen.dart';
 
@@ -79,25 +80,25 @@ class _OtpScreenState extends State<OtpScreen> {
               const SizedBox(height: 24),
 
               Row(
-                children: const [
+                children: [
                   Text(
-                    AppConstants.otpTitle,
-                    style: TextStyle(
+                    AppStrings.otpTitle.tr(),
+                    style: const TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.w800,
                       color: Color(0xFF1A1A1A),
                     ),
                   ),
-                  SizedBox(width: 8),
-                  Text('🔒', style: TextStyle(fontSize: 24)),
+                  const SizedBox(width: 8),
+                  const Text('🔒', style: TextStyle(fontSize: 24)),
                 ],
               ),
 
               const SizedBox(height: 12),
 
-              const Text(
-                AppConstants.otpSubtitle,
-                style: TextStyle(
+              Text(
+                AppStrings.otpSubtitle.tr(),
+                style: const TextStyle(
                   fontSize: 14,
                   color: Color(0xFF888888),
                   height: 1.6,
@@ -131,7 +132,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   text: TextSpan(
                     style: const TextStyle(fontSize: 14, color: Color(0xFF888888)),
                     children: [
-                      TextSpan(text: '${AppConstants.resendCodeIn} '),
+                      TextSpan(text: '${AppStrings.otpResendCodeIn.tr()} '),
                       TextSpan(
                         text: '$_secondsLeft',
                         style: const TextStyle(
@@ -139,7 +140,7 @@ class _OtpScreenState extends State<OtpScreen> {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      TextSpan(text: ' ${AppConstants.seconds}'),
+                      TextSpan(text: ' ${AppStrings.otpSeconds.tr()}'),
                     ],
                   ),
                 ),
@@ -151,7 +152,7 @@ class _OtpScreenState extends State<OtpScreen> {
                 child: GestureDetector(
                   onTap: _secondsLeft == 0 ? _onResend : null,
                   child: Text(
-                    AppConstants.resendCode,
+                    AppStrings.otpResendCode.tr(),
                     style: TextStyle(
                       fontSize: 14,
                       color: _secondsLeft == 0 ? AppColors.primary : const Color(0xFFCCCCCC),

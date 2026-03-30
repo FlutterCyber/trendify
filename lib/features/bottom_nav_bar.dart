@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../core/theme/app_colors.dart';
 import 'home/screens/home_screen.dart';
@@ -16,18 +17,18 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   int _currentIndex = 0;
 
-  final List<Widget> _screens = const [
-    HomeScreen(),
-    WishlistScreen(),
-    CartScreen(),
-    OrdersScreen(),
-    AccountScreen(),
-  ];
-
   @override
   Widget build(BuildContext context) {
+    final screens = [
+      HomeScreen(),
+      WishlistScreen(),
+      CartScreen(),
+      OrdersScreen(),
+      AccountScreen(),
+    ];
+
     return Scaffold(
-      body: IndexedStack(index: _currentIndex, children: _screens),
+      body: IndexedStack(index: _currentIndex, children: screens),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) => setState(() => _currentIndex = index),

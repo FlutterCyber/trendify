@@ -1,5 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import '../../../core/constants/app_constants.dart';
+import 'package:trendify/core/constants/app_strings.dart';
 import '../../../core/theme/app_colors.dart';
 import '../widgets/auth_input_field.dart';
 import '../widgets/loading_overlay.dart';
@@ -29,7 +30,6 @@ class _SignInScreenState extends State<SignInScreen> {
 
   void _onSignIn() async {
     setState(() => _isLoading = true);
-    // TODO: sign in logic
     await Future.delayed(const Duration(seconds: 2));
     if (mounted) setState(() => _isLoading = false);
   }
@@ -47,76 +47,62 @@ class _SignInScreenState extends State<SignInScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 16),
-
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
                     child: const Icon(Icons.arrow_back, size: 24),
                   ),
-
                   const SizedBox(height: 24),
-
                   Row(
-                    children: const [
+                    children: [
                       Text(
-                        AppConstants.signInTitle,
-                        style: TextStyle(
+                        AppStrings.signInTitle.tr(),
+                        style: const TextStyle(
                           fontSize: 26,
                           fontWeight: FontWeight.w800,
                           color: Color(0xFF1A1A1A),
                         ),
                       ),
-                      SizedBox(width: 8),
-                      Text('👋', style: TextStyle(fontSize: 26)),
+                      const SizedBox(width: 8),
+                      const Text('👋', style: TextStyle(fontSize: 26)),
                     ],
                   ),
-
                   const SizedBox(height: 8),
-
-                  const Text(
-                    AppConstants.signInSubtitle,
-                    style: TextStyle(fontSize: 14, color: Color(0xFF888888)),
+                  Text(
+                    AppStrings.signInSubtitle.tr(),
+                    style: const TextStyle(fontSize: 14, color: Color(0xFF888888)),
                   ),
-
                   const SizedBox(height: 32),
-
-                  const Text(
-                    AppConstants.email,
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                  Text(
+                    AppStrings.signUpEmail.tr(),
+                    style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
                   ),
                   const SizedBox(height: 8),
                   AuthInputField(
                     controller: _emailController,
-                    hint: AppConstants.emailHint,
+                    hint: AppStrings.signUpEmailHint.tr(),
                     prefixIcon: Icons.mail_outline_rounded,
                   ),
-
                   const SizedBox(height: 20),
-
-                  const Text(
-                    AppConstants.password,
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                  Text(
+                    AppStrings.signUpPassword.tr(),
+                    style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
                   ),
                   const SizedBox(height: 8),
                   AuthInputField(
                     controller: _passwordController,
-                    hint: AppConstants.passwordHint,
+                    hint: AppStrings.signUpPasswordHint.tr(),
                     prefixIcon: Icons.lock_outline_rounded,
                     obscureText: _obscurePassword,
                     suffixIcon: GestureDetector(
                       onTap: () => setState(() => _obscurePassword = !_obscurePassword),
                       child: Icon(
-                        _obscurePassword
-                            ? Icons.visibility_off_outlined
-                            : Icons.visibility_outlined,
+                        _obscurePassword ? Icons.visibility_off_outlined : Icons.visibility_outlined,
                         color: Colors.grey,
                         size: 20,
                       ),
                     ),
                   ),
-
                   const SizedBox(height: 16),
-
-                  // Remember me + Forgot password
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -141,22 +127,20 @@ class _SignInScreenState extends State<SignInScreen> {
                             ),
                           ),
                           const SizedBox(width: 10),
-                          const Text(
-                            AppConstants.rememberMe,
-                            style: TextStyle(fontSize: 14, color: Color(0xFF1A1A1A)),
+                          Text(
+                            AppStrings.signInRememberMe.tr(),
+                            style: const TextStyle(fontSize: 14, color: Color(0xFF1A1A1A)),
                           ),
                         ],
                       ),
                       GestureDetector(
                         onTap: () => Navigator.push(
                           context,
-                          MaterialPageRoute(
-                            builder: (_) => const ForgotPasswordScreen(),
-                          ),
+                          MaterialPageRoute(builder: (_) => const ForgotPasswordScreen()),
                         ),
-                        child: const Text(
-                          AppConstants.forgotPassword,
-                          style: TextStyle(
+                        child: Text(
+                          AppStrings.signInForgotPassword.tr(),
+                          style: const TextStyle(
                             fontSize: 14,
                             color: AppColors.primary,
                             fontWeight: FontWeight.w500,
@@ -165,11 +149,9 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                     ],
                   ),
-
                   const SizedBox(height: 24),
-
-                  Row(
-                    children: const [
+                  const Row(
+                    children: [
                       Expanded(child: Divider(color: Color(0xFFEEEEEE))),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 12),
@@ -178,29 +160,25 @@ class _SignInScreenState extends State<SignInScreen> {
                       Expanded(child: Divider(color: Color(0xFFEEEEEE))),
                     ],
                   ),
-
                   const SizedBox(height: 16),
-
                   SocialButton(
                     icon: 'assets/icons/google.png',
-                    label: AppConstants.continueWithGoogle,
+                    label: AppStrings.welcomeContinueWithGoogle.tr(),
                     onTap: () {},
                   ),
                   const SizedBox(height: 12),
                   SocialButton(
                     icon: 'assets/icons/apple.png',
-                    label: AppConstants.continueWithApple,
+                    label: AppStrings.welcomeContinueWithApple.tr(),
                     onTap: () {},
                   ),
                   const SizedBox(height: 12),
                   SocialButton(
                     icon: 'assets/icons/facebook.png',
-                    label: AppConstants.continueWithFacebook,
+                    label: AppStrings.welcomeContinueWithFacebook.tr(),
                     onTap: () {},
                   ),
-
                   const SizedBox(height: 24),
-
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
@@ -213,9 +191,9 @@ class _SignInScreenState extends State<SignInScreen> {
                           borderRadius: BorderRadius.circular(50),
                         ),
                       ),
-                      child: const Text(
-                        AppConstants.signIn,
-                        style: TextStyle(
+                      child: Text(
+                        AppStrings.welcomeSignIn.tr(),
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
@@ -223,14 +201,12 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                     ),
                   ),
-
                   const SizedBox(height: 32),
                 ],
               ),
             ),
           ),
-
-          if (_isLoading) LoadingOverlay(message: AppConstants.signInLoading),
+          if (_isLoading) LoadingOverlay(message: AppStrings.signInLoading.tr()),
         ],
       ),
     );

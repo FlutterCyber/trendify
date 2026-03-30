@@ -1,5 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import '../../../core/constants/app_constants.dart';
+import 'package:trendify/core/constants/app_strings.dart';
 import '../../../core/theme/app_colors.dart';
 import '../widgets/auth_input_field.dart';
 import 'reset_password_success_screen.dart';
@@ -46,25 +47,25 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
 
               // Title
               Row(
-                children: const [
+                children: [
                   Text(
-                    AppConstants.createPasswordTitle,
-                    style: TextStyle(
+                    AppStrings.createPasswordTitle.tr(),
+                    style: const TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.w800,
                       color: Color(0xFF1A1A1A),
                     ),
                   ),
-                  SizedBox(width: 8),
-                  Text('🔒', style: TextStyle(fontSize: 24)),
+                  const SizedBox(width: 8),
+                  const Text('🔒', style: TextStyle(fontSize: 24)),
                 ],
               ),
 
               const SizedBox(height: 12),
 
-              const Text(
-                AppConstants.createPasswordSubtitle,
-                style: TextStyle(
+              Text(
+                AppStrings.createPasswordSubtitle.tr(),
+                style: const TextStyle(
                   fontSize: 14,
                   color: Color(0xFF888888),
                   height: 1.6,
@@ -74,14 +75,14 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
               const SizedBox(height: 32),
 
               // New Password
-              const Text(
-                AppConstants.newPassword,
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+              Text(
+                AppStrings.createPasswordNewPassword.tr(),
+                style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
               ),
               const SizedBox(height: 8),
               AuthInputField(
                 controller: _newPasswordController,
-                hint: AppConstants.newPasswordHint,
+                hint: AppStrings.createPasswordNewPasswordHint.tr(),
                 prefixIcon: Icons.lock_outline_rounded,
                 obscureText: _obscureNew,
                 suffixIcon: GestureDetector(
@@ -97,14 +98,14 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
               const SizedBox(height: 20),
 
               // Confirm New Password
-              const Text(
-                AppConstants.confirmNewPassword,
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+              Text(
+                AppStrings.createPasswordConfirmNewPassword.tr(),
+                style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
               ),
               const SizedBox(height: 8),
               AuthInputField(
                 controller: _confirmPasswordController,
-                hint: AppConstants.confirmNewPasswordHint,
+                hint: AppStrings.createPasswordConfirmNewPasswordHint.tr(),
                 prefixIcon: Icons.lock_outline_rounded,
                 obscureText: _obscureConfirm,
                 suffixIcon: GestureDetector(
@@ -137,9 +138,9 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                       borderRadius: BorderRadius.circular(50),
                     ),
                   ),
-                  child: const Text(
-                    AppConstants.saveNewPassword,
-                    style: TextStyle(
+                  child: Text(
+                    AppStrings.createPasswordSave.tr(),
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.w600,

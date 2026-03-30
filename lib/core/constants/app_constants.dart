@@ -1,5 +1,8 @@
 import 'dart:ui';
 
+import 'package:easy_localization/easy_localization.dart';
+import 'app_strings.dart';
+
 class AppConstants {
   AppConstants._();
 
@@ -14,101 +17,42 @@ class AppConstants {
   static const int splashDurationMs = 3000;
 
   // Walkthrough
-  static const List<WalkthroughItem> walkthroughItems = [
+  static List<WalkthroughItem> get walkthroughItems => [
     WalkthroughItem(
       image: 'assets/images/walkthrough_1.png',
-      title: 'Explore Fashion Trends\nwith Trendify',
-      description:
-      'Dive into the world of fashion with Trendify, where you can discover the latest and hottest styles curated just for you.',
+      title: AppStrings.walkthrough1Title.tr(),
+      description: AppStrings.walkthrough1Description.tr(),
     ),
     WalkthroughItem(
       image: 'assets/images/walkthrough_2.png',
-      title: 'Your Style, Your Trendify\nExperience',
-      description:
-      "Trendify goes beyond fashion – it's a personalized style journey. Start your fashion adventure with Trendify today.",
+      title: AppStrings.walkthrough2Title.tr(),
+      description: AppStrings.walkthrough2Description.tr(),
     ),
     WalkthroughItem(
       image: 'assets/images/walkthrough_3.png',
-      title: 'Seamless Fashion,\nSeamless Shopping',
-      description:
-      'Trendify offers an effortless shopping experience, making your style journey smoother than ever.',
+      title: AppStrings.walkthrough3Title.tr(),
+      description: AppStrings.walkthrough3Description.tr(),
     ),
   ];
 
-  // Welcome screen
-  static const String welcomeTitle = "Let's Get Started!";
-  static const String welcomeSubtitle = "Let's dive in into your account";
-  static const String signUp = 'Sign up';
-  static const String signIn = 'Sign in';
-  static const String privacyPolicy = 'Privacy Policy';
-  static const String termsOfService = 'Terms of Service';
-  static const String continueWithGoogle = 'Continue with Google';
-  static const String continueWithApple = 'Continue with Apple';
-  static const String continueWithFacebook = 'Continue with Facebook';
-  static const String continueWithTwitter = 'Continue with Twitter';
-
-  // Sign up screen
-  static const String signUpTitle = 'Join Trendify Today';
-  static const String signUpSubtitle = 'Embark on a fashion journey tailored for you.';
-  static const String email = 'Email';
-  static const String emailHint = 'Email';
-  static const String password = 'Password';
-  static const String passwordHint = 'Password';
-  static const String agreeToTerms = 'I agree to Trendify ';
-  static const String termsAndConditions = 'Terms & Conditions.';
-  static const String alreadyHaveAccount = 'Already have an account? ';
-  static const String signUpLoading = 'Sign up...';
-
-  // Sign in screen
-  static const String signInTitle = 'Welcome Back!';
-  static const String signInSubtitle = 'Sign in to access your personalized fashion.';
-  static const String rememberMe = 'Remember me';
-  static const String forgotPassword = 'Forgot Password?';
-  static const String dontHaveAccount = "Don't have an account? ";
-  static const String signInLoading = 'Sign in...';
-
-  // Forgot password screen
-  static const String forgotPasswordTitle = 'Forgot Your Password?';
-  static const String forgotPasswordSubtitle =
-      "We've got you covered. Enter your registered email to reset your password. We will send an OTP code to your email for the next steps.";
-  static const String registeredEmail = 'Your Registered Email';
-  static const String sendOtpCode = 'Send OTP Code';
-
-  // OTP screen
-  static const String otpTitle = 'Enter OTP Code';
-  static const String otpSubtitle =
-      'Please check your email inbox for a message from Trendify. Enter the one-time verification code below.';
-  static const String resendCode = 'Resend code';
-  static const String resendCodeIn = 'You can resend the code in';
-  static const String seconds = 'seconds';
-
-  // Create new password screen
-  static const String createPasswordTitle = 'Secure Your Account';
-  static const String createPasswordSubtitle =
-      'Almost there! Create a new password for your Trendify account to keep it secure. Remember to choose a strong and unique password.';
-  static const String newPassword = 'New Password';
-  static const String newPasswordHint = 'New Password';
-  static const String confirmNewPassword = 'Confirm New Password';
-  static const String confirmNewPasswordHint = 'Confirm New Password';
-  static const String saveNewPassword = 'Save New Password';
-
-  // Reset success screen
-  static const String resetSuccessTitle = "You're All Set!";
-  static const String resetSuccessSubtitle = 'Your password has been successfully changed.';
-  static const String goToHomepage = 'Go to Homepage';
-
   // Home screen
-  static const List<String> homeCategories = ['Discover', 'Women', 'Men', 'Shoe', 'Bag'];
+  static List<String> get homeCategories => [
+    AppStrings.homeCategoriesDiscover.tr(),
+    AppStrings.homeCategoriesWomen.tr(),
+    AppStrings.homeCategoriesMen.tr(),
+    AppStrings.homeCategoriesShoe.tr(),
+    AppStrings.homeCategoriesBag.tr(),
+  ];
 
   // Sort options
-  static const List<String> sortOptions = [
-    'Most Suitable',
-    'Popularity',
-    'Top Rated',
-    'Price High to Low',
-    'Price Low to High',
-    'Latest Arrival',
-    'Discount',
+  static List<String> get sortOptions => [
+    AppStrings.homeSortMostSuitable.tr(),
+    AppStrings.homeSortPopularity.tr(),
+    AppStrings.homeSortTopRated.tr(),
+    AppStrings.homeSortPriceHighToLow.tr(),
+    AppStrings.homeSortPriceLowToHigh.tr(),
+    AppStrings.homeSortLatestArrival.tr(),
+    AppStrings.homeSortDiscount.tr(),
   ];
 
   static const List<ProductItem> featuredProducts = [
@@ -133,29 +77,29 @@ class AppConstants {
   static const List<String> productSizes = ['XS', 'S', 'M', 'L', 'XL'];
 
   static const List<Color> productColors = [
-    Color(0xFF1A1A1A), // Black
-    Color(0xFFFFFFFF), // White
-    Color(0xFF6D4C41), // Brown
-    Color(0xFF607D8B), // Blue Grey
-    Color(0xFF3949AB), // Indigo
-    Color(0xFF6A1B9A), // Deep Purple
+    Color(0xFF1A1A1A),
+    Color(0xFFFFFFFF),
+    Color(0xFF6D4C41),
+    Color(0xFF607D8B),
+    Color(0xFF3949AB),
+    Color(0xFF6A1B9A),
   ];
 
-  static const List<ProductInfoItem> productDetailInfo = [
-    ProductInfoItem(label: 'Material', value: '100% Acrylic'),
-    ProductInfoItem(label: 'Care Label', value: 'Machine Washable'),
-    ProductInfoItem(label: 'SKU', value: 'URL-SS-CS-Cs-245'),
-    ProductInfoItem(label: 'Color', value: 'Vary'),
-    ProductInfoItem(label: 'Neck', value: 'High Neck'),
-    ProductInfoItem(label: 'Pattern', value: 'Solid'),
+  static List<ProductInfoItem> get productDetailInfo => [
+    ProductInfoItem(label: AppStrings.productInfoMaterial.tr(), value: '100% Acrylic'),
+    ProductInfoItem(label: AppStrings.productInfoCareLabel.tr(), value: 'Machine Washable'),
+    ProductInfoItem(label: AppStrings.productInfoSku.tr(), value: 'URL-SS-CS-Cs-245'),
+    ProductInfoItem(label: AppStrings.productInfoColor.tr(), value: 'Vary'),
+    ProductInfoItem(label: AppStrings.productInfoNeck.tr(), value: 'High Neck'),
+    ProductInfoItem(label: AppStrings.productInfoPattern.tr(), value: 'Solid'),
   ];
 
   static const String productDescription =
       'Elevate your style with the Urban Blend Long Sleeve Shirt, a perfect blend of urban sophistication and contemporary comfort. Crafted with meticulous attention to detail, this shirt is designed to make a statement in any setting.';
 
-  static const List<VoucherItem> productVouchers = [
-    VoucherItem(label: 'Best Deal', discount: '20% OFF', code: 'DDEAL5', minSpend: '\$30', until: '01/01/2026'),
-    VoucherItem(label: 'Best Deal', discount: '10% OFF', code: 'HELLO', minSpend: '\$20', until: '01/01/2026'),
+  static List<VoucherItem> get productVouchers => [
+    VoucherItem(label: AppStrings.productVoucherBestDeal.tr(), discount: '20% OFF', code: 'DDEAL5', minSpend: '\$30', until: '01/01/2026'),
+    VoucherItem(label: AppStrings.productVoucherBestDeal.tr(), discount: '10% OFF', code: 'HELLO', minSpend: '\$20', until: '01/01/2026'),
   ];
 
   static const List<ReviewItem> productReviews = [
@@ -188,32 +132,36 @@ class AppConstants {
     '\$300 & up',
   ];
 
-  static const List<String> filterRatings = ['3 & up', '4 & up', '5'];
+  static List<String> get filterRatings => [
+    AppStrings.filterRatings3Up.tr(),
+    AppStrings.filterRatings4Up.tr(),
+    AppStrings.filterRatings5.tr(),
+  ];
 
   static const List<String> filterSizes = [
     'XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL',
     '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45',
   ];
 
-  static const List<Map<String, dynamic>> filterColors = [
-    {'label': 'Black', 'color': Color(0xFF1A1A1A)},
-    {'label': 'White', 'color': Color(0xFFFFFFFF)},
-    {'label': 'Red', 'color': Color(0xFFE53935)},
-    {'label': 'Pink', 'color': Color(0xFFE91E8C)},
-    {'label': 'Purple', 'color': Color(0xFF9C27B0)},
-    {'label': 'Deep Pu.', 'color': Color(0xFF6A1B9A)},
-    {'label': 'Indigo', 'color': Color(0xFF3949AB)},
-    {'label': 'Blue', 'color': Color(0xFF1E88E5)},
-    {'label': 'Light Bl.', 'color': Color(0xFF29B6F6)},
-    {'label': 'Teal', 'color': Color(0xFF00897B)},
-    {'label': 'Green', 'color': Color(0xFF43A047)},
-    {'label': 'Lime', 'color': Color(0xFFCDDC39)},
-    {'label': 'Yellow', 'color': Color(0xFFFFEB3B)},
-    {'label': 'Amber', 'color': Color(0xFFFFA000)},
-    {'label': 'Orange', 'color': Color(0xFFFF7043)},
-    {'label': 'Deep O.', 'color': Color(0xFFBF360C)},
-    {'label': 'Brown', 'color': Color(0xFF6D4C41)},
-    {'label': 'Blue Grey', 'color': Color(0xFF607D8B)},
+  static List<Map<String, dynamic>> get filterColors => [
+    {'label': AppStrings.filterColorsBlack.tr(), 'color': const Color(0xFF1A1A1A)},
+    {'label': AppStrings.filterColorsWhite.tr(), 'color': const Color(0xFFFFFFFF)},
+    {'label': AppStrings.filterColorsRed.tr(), 'color': const Color(0xFFE53935)},
+    {'label': AppStrings.filterColorsPink.tr(), 'color': const Color(0xFFE91E8C)},
+    {'label': AppStrings.filterColorsPurple.tr(), 'color': const Color(0xFF9C27B0)},
+    {'label': AppStrings.filterColorsDeepPurple.tr(), 'color': const Color(0xFF6A1B9A)},
+    {'label': AppStrings.filterColorsIndigo.tr(), 'color': const Color(0xFF3949AB)},
+    {'label': AppStrings.filterColorsBlue.tr(), 'color': const Color(0xFF1E88E5)},
+    {'label': AppStrings.filterColorsLightBlue.tr(), 'color': const Color(0xFF29B6F6)},
+    {'label': AppStrings.filterColorsTeal.tr(), 'color': const Color(0xFF00897B)},
+    {'label': AppStrings.filterColorsGreen.tr(), 'color': const Color(0xFF43A047)},
+    {'label': AppStrings.filterColorsLime.tr(), 'color': const Color(0xFFCDDC39)},
+    {'label': AppStrings.filterColorsYellow.tr(), 'color': const Color(0xFFFFEB3B)},
+    {'label': AppStrings.filterColorsAmber.tr(), 'color': const Color(0xFFFFA000)},
+    {'label': AppStrings.filterColorsOrange.tr(), 'color': const Color(0xFFFF7043)},
+    {'label': AppStrings.filterColorsDeepOrange.tr(), 'color': const Color(0xFFBF360C)},
+    {'label': AppStrings.filterColorsBrown.tr(), 'color': const Color(0xFF6D4C41)},
+    {'label': AppStrings.filterColorsBlueGrey.tr(), 'color': const Color(0xFF607D8B)},
   ];
 
   static const List<ProductItem> categoryProducts = [
@@ -225,17 +173,17 @@ class AppConstants {
     ProductItem(image: 'assets/images/image_1.png', name: 'Moda Chic Luxury', price: 200.00, rating: 4.5),
   ];
 
-  static const List<CategoryItem> categoryGridItems = [
-    CategoryItem(label: 'Women', image: 'assets/images/image_2.png'),
-    CategoryItem(label: 'Men', image: 'assets/images/image_2.png'),
-    CategoryItem(label: 'Shoe', image: 'assets/images/image_2.png'),
-    CategoryItem(label: 'Bag', image: 'assets/images/image_2.png'),
-    CategoryItem(label: 'Luxury', image: 'assets/images/image_2.png'),
-    CategoryItem(label: 'Kids', image: 'assets/images/image_2.png'),
-    CategoryItem(label: 'Sports', image: 'assets/images/image_2.png'),
-    CategoryItem(label: 'Beauty', image: 'assets/images/image_2.png'),
-    CategoryItem(label: 'Lifestyle', image: 'assets/images/image_2.png'),
-    CategoryItem(label: 'Other', image: 'assets/images/image_2.png'),
+  static List<CategoryItem> get categoryGridItems => [
+    CategoryItem(label: AppStrings.categoryWomen.tr(), image: 'assets/images/image_2.png'),
+    CategoryItem(label: AppStrings.categoryMen.tr(), image: 'assets/images/image_2.png'),
+    CategoryItem(label: AppStrings.categoryShoe.tr(), image: 'assets/images/image_2.png'),
+    CategoryItem(label: AppStrings.categoryBag.tr(), image: 'assets/images/image_2.png'),
+    CategoryItem(label: AppStrings.categoryLuxury.tr(), image: 'assets/images/image_2.png'),
+    CategoryItem(label: AppStrings.categoryKids.tr(), image: 'assets/images/image_2.png'),
+    CategoryItem(label: AppStrings.categorySports.tr(), image: 'assets/images/image_2.png'),
+    CategoryItem(label: AppStrings.categoryBeauty.tr(), image: 'assets/images/image_2.png'),
+    CategoryItem(label: AppStrings.categoryLifestyle.tr(), image: 'assets/images/image_2.png'),
+    CategoryItem(label: AppStrings.categoryOther.tr(), image: 'assets/images/image_2.png'),
   ];
 }
 

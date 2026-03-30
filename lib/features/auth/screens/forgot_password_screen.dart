@@ -1,5 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import '../../../core/constants/app_constants.dart';
+import 'package:trendify/core/constants/app_strings.dart';
 import '../../../core/theme/app_colors.dart';
 import '../widgets/auth_input_field.dart';
 import 'otp_screen.dart';
@@ -42,25 +43,25 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
               // Title
               Row(
-                children: const [
+                children: [
                   Text(
-                    AppConstants.forgotPasswordTitle,
-                    style: TextStyle(
+                    AppStrings.forgotPasswordTitle.tr(),
+                    style: const TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.w800,
                       color: Color(0xFF1A1A1A),
                     ),
                   ),
-                  SizedBox(width: 8),
-                  Text('🔑', style: TextStyle(fontSize: 24)),
+                  const SizedBox(width: 8),
+                  const Text('🔑', style: TextStyle(fontSize: 24)),
                 ],
               ),
 
               const SizedBox(height: 12),
 
-              const Text(
-                AppConstants.forgotPasswordSubtitle,
-                style: TextStyle(
+              Text(
+                AppStrings.forgotPasswordSubtitle.tr(),
+                style: const TextStyle(
                   fontSize: 14,
                   color: Color(0xFF888888),
                   height: 1.6,
@@ -69,14 +70,14 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
               const SizedBox(height: 32),
 
-              const Text(
-                AppConstants.registeredEmail,
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+              Text(
+                AppStrings.forgotPasswordRegisteredEmail.tr(),
+                style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
               ),
               const SizedBox(height: 8),
               AuthInputField(
                 controller: _emailController,
-                hint: AppConstants.emailHint,
+                hint: AppStrings.signUpEmailHint.tr(),
                 prefixIcon: Icons.mail_outline_rounded,
               ),
 
@@ -98,9 +99,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       borderRadius: BorderRadius.circular(50),
                     ),
                   ),
-                  child: const Text(
-                    AppConstants.sendOtpCode,
-                    style: TextStyle(
+                  child: Text(
+                    AppStrings.forgotPasswordSendOtpCode.tr(),
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
